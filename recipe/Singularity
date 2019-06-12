@@ -79,7 +79,8 @@ MirrorURL: http://ftp.ca.debian.org/debian/
             locale-gen en_US.UTF-8 && \
             dpkg-reconfigure locales
     rm -r /var/lib/apt/lists/*
-
+    apt-get -yq purge curl gnupg2 build-essential ca-certificates lsb-release apt-transport-https g++
+    apt-get -yq autoremove
 
 %runscript
     echo "The following tools are available:"
